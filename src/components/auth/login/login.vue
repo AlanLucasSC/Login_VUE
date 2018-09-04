@@ -5,17 +5,18 @@ export default {
     data(){
         return {
             title: 'Login',
+            error: false,
             email: '',
             emailValidate: {
                 if: false,
                 message: '',
-                success: true
+                success: false
             },
             password: '',
             passwordValidate: {
                 if: false,
                 message: 'A senha deve conter mais de 8 caracteres',
-                success: true
+                success: false
             },
             users: [
                 {
@@ -68,12 +69,22 @@ export default {
             }
         },
         entrar(){
-            for(var id in this.users){
-                if(this.email == this.users[id].email && this.password == this.users[id].password){
-                    this.logar()
-                } else{
-                    console.log('NO')
+            var cont = 0
+            if(this.emailValidate.success != false && this.passwordValidate.success != false){
+                for(var id in this.users){
+                    if(this.email == this.users[id].email && this.password == this.users[id].password){
+                        cont = 1
+                        this.logar()
+                    }
                 }
+            } else {
+                this.validateEmail()
+                this.validatePassword()
+            }
+            if( cont != 1 ){
+                this.error = true
+                window.setTimeout(() => this.error = false, 3000)
+                cont = 0
             }
         },
         logar(){
