@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="text-right mt-2 mr-2">
-            <button type="button" class="btn btn-outline-danger" v-on:click="sair">Sair</button>
+            <button type="button" id="sair" class="btn btn-outline-danger" v-on:click="sair">Sair</button>
         </div>
         <div class="container-fluid row">
             <div class="col-3 mt-4">
                 <ul id="example-2">
-                    <a v-for="(item, index) in menu" class="list-group-item list-group-item-action" v-bind:href="item.url">
+                    <a v-for="(item, index) in menu" v-bind:id="index" class="list-group-item list-group-item-action" v-bind:href="item.url">
                         {{ item.name }}
                     </a>
                 </ul>
