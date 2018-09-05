@@ -88,16 +88,26 @@ export default {
             }
         },
         logar(){
-            console.log('LOGADO')
+            localStorage.setItem("login", "ok")
+            localStorage.setItem("email", this.email)
+            window.location.pathname = '/menu'
         }
     }
 }
 </script>
-<style>
+<style scoped>
     #form{
         margin-top: 20px
     }
     #passwordHelp{
         margin-left: 20%
+    }
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
     }
 </style>

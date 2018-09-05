@@ -1,27 +1,19 @@
 <template>
     <div id="app">
-        <Login/>
+        <app-router></app-router>
     </div>
 </template>
 
 <script>
-import Login from './components/auth/login/login.vue'
+import AppRouter from "./router/router.vue";
 
 export default {
   name: 'app',
   components: {
-    Login
+    AppRouter
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
