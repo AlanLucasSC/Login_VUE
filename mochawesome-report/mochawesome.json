@@ -1,0 +1,340 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 8,
+    "passes": 6,
+    "pending": 0,
+    "failures": 2,
+    "start": "2018-09-05T23:33:46.565Z",
+    "end": "2018-09-05T23:34:12.028Z",
+    "duration": 25463,
+    "testsRegistered": 8,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "warning",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "cb8932e0-50fa-4001-9603-18a22af3d093",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "ab4985dd-0df2-46ca-8d30-99fd221ddfd4",
+        "title": "Teste localhost VueJS",
+        "fullFile": "",
+        "file": "",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "19b0cd18-3fc3-41d0-b3b7-18decc467ba2",
+            "title": "/Login_pass",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "/Email_correto",
+                "fullTitle": "Teste localhost VueJS /Login_pass /Email_correto",
+                "duration": 4361,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "//Conta Email:admin@gmail.com pass: 123456789\ncy //insert correct email\n.get('#staticEmail').type('admin@gmail.com') //click submit\n.get('.btn').click() //verify log out button\n.get(':nth-child(1) > #passwordHelp').should('be.visible') //verify span error\n.contains('O formato do email está correto');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "ea3ed0fe-0db3-4d2f-a44b-6ac827270c3a",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "/Senha_Correta",
+                "fullTitle": "Teste localhost VueJS /Login_pass /Senha_Correta",
+                "duration": 776,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "cy //insert correct pass\n.get('#inputPassword').type('123456789') //click submit\n.get('.btn').click() //verify span error\n.get('#passwordHelp').should('be.visible');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "eff3c234-e1b7-45b1-ac4a-677225949d02",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "ea3ed0fe-0db3-4d2f-a44b-6ac827270c3a",
+              "eff3c234-e1b7-45b1-ac4a-677225949d02"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 5137,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "85bb647e-251f-4077-96c2-36dcf15d4127",
+        "title": "Teste VueJS - Fluxo Alternativo",
+        "fullFile": "",
+        "file": "",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "816c0157-8964-4dc4-adef-2053168de6e4",
+            "title": "/Login_fail_campos_vazios",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "/Email_vazio",
+                "fullTitle": "Teste VueJS - Fluxo Alternativo /Login_fail_campos_vazios /Email_vazio",
+                "duration": 3618,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "cy //insert empty email\n.get('#staticEmail').type('aa') //clear values from email\n.clear() //click submit\n.get('.btn').click() //expect message error\n.get(':nth-child(1) > #passwordHelp').should('be.visible') //with this value\n.contains('O email está vazio');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "21feedc1-893c-42ac-9685-ecaaf3aeb0f9",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "/Senha_vazia",
+                "fullTitle": "Teste VueJS - Fluxo Alternativo /Login_fail_campos_vazios /Senha_vazia",
+                "duration": 4450,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
+                "pending": false,
+                "code": "cy //insert empty pass\n.get('#inputPassword') //click submit\n.get('.btn').click() //expect message error\n.get('#passwordHelp').should('be.visible') //with this value\n.contains('A senha está vazio');",
+                "err": {
+                  "message": "CypressError: Timed out retrying: Expected to find content: 'A senha está vazio' within the element: <small#passwordHelp.form-text.text-success.active.text-danger> but never did.",
+                  "estack": "CypressError: Timed out retrying: Expected to find content: 'A senha está vazio' within the element: <small#passwordHelp.form-text.text-success.active.text-danger> but never did.\n    at Object.cypressErr (http://localhost:8080/__cypress/runner/cypress_runner.js:68040:11)\n    at Object.throwErr (http://localhost:8080/__cypress/runner/cypress_runner.js:68005:18)\n    at Object.throwErrByPath (http://localhost:8080/__cypress/runner/cypress_runner.js:68032:17)\n    at retry (http://localhost:8080/__cypress/runner/cypress_runner.js:61785:16)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:53903:18\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:7091:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:5113:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:5170:18)\n    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:5215:10)\n    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:5290:18)\n    at Async._drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:2023:16)\n    at Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:2033:10)\n    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:1907:14)\n    at <anonymous>"
+                },
+                "isRoot": false,
+                "uuid": "44c9c70d-582a-4a44-b30a-e29e68f6c114",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "21feedc1-893c-42ac-9685-ecaaf3aeb0f9"
+            ],
+            "failures": [
+              "44c9c70d-582a-4a44-b30a-e29e68f6c114"
+            ],
+            "pending": [],
+            "skipped": [],
+            "duration": 8068,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          },
+          {
+            "uuid": "28d73aa3-c1ef-4306-869a-6048e56b27ca",
+            "title": "/Login_fail",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "/Email_n_formatado",
+                "fullTitle": "Teste VueJS - Fluxo Alternativo /Login_fail /Email_n_formatado",
+                "duration": 3553,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "cy //insert not formated email\n.get('#staticEmail').type('aa') //click submit\n.get('.btn').click() //expect message error\n.get(':nth-child(1) > #passwordHelp').should('be.visible') //with this value\n.contains('O formato do email está incorreto');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "d8ccb932-9c84-46fd-8a0e-5e8d987851f2",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "/Senha_menor_8",
+                "fullTitle": "Teste VueJS - Fluxo Alternativo /Login_fail /Senha_menor_8",
+                "duration": 4664,
+                "state": "failed",
+                "pass": false,
+                "fail": true,
+                "pending": false,
+                "code": "cy //insert pass with 6 elements, expect 8\n.get('#inputPassword').type('123456') //click submit\n.get('.btn').click() //expect message error\n.get('#passwordHelp').should('be.visible') //with this value\n.contains('A senha deve conter mais de 8 caracteres');",
+                "err": {
+                  "message": "CypressError: Timed out retrying: Expected to find content: 'A senha deve conter mais de 8 caracteres' within the element: <small#passwordHelp.form-text.text-success.active.text-danger> but never did.",
+                  "estack": "CypressError: Timed out retrying: Expected to find content: 'A senha deve conter mais de 8 caracteres' within the element: <small#passwordHelp.form-text.text-success.active.text-danger> but never did.\n    at Object.cypressErr (http://localhost:8080/__cypress/runner/cypress_runner.js:68040:11)\n    at Object.throwErr (http://localhost:8080/__cypress/runner/cypress_runner.js:68005:18)\n    at Object.throwErrByPath (http://localhost:8080/__cypress/runner/cypress_runner.js:68032:17)\n    at retry (http://localhost:8080/__cypress/runner/cypress_runner.js:61785:16)\n    at http://localhost:8080/__cypress/runner/cypress_runner.js:53903:18\n    at tryCatcher (http://localhost:8080/__cypress/runner/cypress_runner.js:7091:23)\n    at Promise._settlePromiseFromHandler (http://localhost:8080/__cypress/runner/cypress_runner.js:5113:31)\n    at Promise._settlePromise (http://localhost:8080/__cypress/runner/cypress_runner.js:5170:18)\n    at Promise._settlePromise0 (http://localhost:8080/__cypress/runner/cypress_runner.js:5215:10)\n    at Promise._settlePromises (http://localhost:8080/__cypress/runner/cypress_runner.js:5290:18)\n    at Async._drainQueue (http://localhost:8080/__cypress/runner/cypress_runner.js:2023:16)\n    at Async._drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:2033:10)\n    at Async.drainQueues (http://localhost:8080/__cypress/runner/cypress_runner.js:1907:14)\n    at <anonymous>"
+                },
+                "isRoot": false,
+                "uuid": "aaaa8eb0-ba24-43e5-8ea2-ea258ecf42ea",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "d8ccb932-9c84-46fd-8a0e-5e8d987851f2"
+            ],
+            "failures": [
+              "aaaa8eb0-ba24-43e5-8ea2-ea258ecf42ea"
+            ],
+            "pending": [],
+            "skipped": [],
+            "duration": 8217,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          },
+          {
+            "uuid": "540e2d32-0758-4c2e-b6b2-afe4be9d5934",
+            "title": "Conta_n_existe",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "/Email_n_formatado",
+                "fullTitle": "Teste VueJS - Fluxo Alternativo Conta_n_existe /Email_n_formatado",
+                "duration": 945,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "cy //insert formated email, but not exists\n.get('#staticEmail').type('ypedroso8@gmail.com') //insert correct pass\n.get('#inputPassword').type('123456789') //click submit\n.get('.btn').click() //expect message error\n.get('.alert').should('be.visible') //with this value\n.contains('Conta não existe');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "21acf543-0a29-4e22-8baa-fe3892c44b25",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "21acf543-0a29-4e22-8baa-fe3892c44b25"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 945,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "768a13ac-f045-4235-a855-f43fb574f632",
+        "title": "Teste VueJS - Login",
+        "fullFile": "",
+        "file": "",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "0f2809e4-e736-4e19-afbf-b90eeafc65de",
+            "title": "/Login_pass_access_index",
+            "fullFile": "",
+            "file": "",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "/Login_index",
+                "fullTitle": "Teste VueJS - Login /Login_pass_access_index /Login_index",
+                "duration": 1239,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "cy //insert correct email\n.get('#staticEmail').type('admin@gmail.com') //and correct pass\n.get('#inputPassword').type('123456789') //click submit\n.get('.btn').click() //expect button sair be visible\n.get('#sair').should('be.visible') //expect list of movies\n.get('.list-group').should('be.visible'); //click link\ncy.get('.col-3 > #example-2').should('be.visible').contains('Vingadores: Guerra Infinita');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "89cafd89-5d34-43dd-b223-4c39a1bdb100",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "89cafd89-5d34-43dd-b223-4c39a1bdb100"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 1239,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}
