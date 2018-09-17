@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test" : "./node_modules/.bin/cypress run"
+    "test": "./node_modules/.bin/cypress run"
   },
   "dependencies": {
     "mocha": "^5.2.0",
